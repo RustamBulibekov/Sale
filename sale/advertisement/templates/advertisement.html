@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advertisements</title>
+</head>
+<body>
+<h1>Advertisements</h1>
+
+
+
+
+{% if user.is_authenticated %}
+{% if adv %}
+{% for e in adv %}
+<p>{{ e.title }}</p>
+<p>{{ e.price }}</p>
+
+<p>
+    <a href="{% url 'advertisement:rubrics' e.rubric.pk %}"> {{ e.rubric.name }}</a>
+</p>
+
+
+<p>{{ e.published }}</p>
+
+<p>-------------------</p>
+{% endfor %}
+<p>
+    <a href="{% url 'users:logout' %}">LogOut</a>
+</p>
+{% else %}
+<p>Advertisement is empty </p>
+{% endif %}
+{% else %}
+<p>
+    <a href="{% url 'users:login' %}">LogIN</a>
+</p>
+{% endif %}
+</body>
+</html>

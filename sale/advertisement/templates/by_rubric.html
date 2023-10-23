@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rubrics</title>
+</head>
+<body>
+<p>Rubric: {{ rubric.name }} </p>
+
+
+{% for a in adv %}
+<p> {{ a.title }}</p>
+<p>{{ a.price }}</p>
+<p>{{ a.published }}</p>
+{% endfor %}
+
+</body>
+</html>
